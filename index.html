@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trader Alpha - Download</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <script>
+        function togglePersonalizeBox() {
+            var box = document.getElementById('personalize');
+            box.style.display = (box.style.display === 'none' || box.style.display === '') ? 'block' : 'none';
+        }
+
+        function enviarParaWhatsApp(event) {
+            event.preventDefault(); // Previne o envio padrão do formulário
+
+            var mensagem = encodeURIComponent(document.getElementById('custom-request').value);
+            var numeroWhatsApp = '14998577463';
+            var url = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
+
+            window.open(url, '_blank'); // Abre o WhatsApp em uma nova aba
+
+            // Fecha a caixa após o envio
+            document.getElementById('personalize').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <header>
+            <div class="container">
+                <h1><img src="alpha.png" alt="Ícone de Lobo" class="wolf-icon"> Trader Alpha</h1>
+            </div>
+    </header>
+    <main>
+        <section class="description">
+            <div class="container">
+                <h2>Descrição do Software</h2>
+                <p>O Trader Alpha é uma solução avançada para traders que buscam otimizar suas estratégias e evitar operações contra a tendência. Utilizando a automação de sinais com médias móveis, nosso software garante que suas operações sejam realizadas apenas quando estiver alinhadas com a tendência dominante.</p>
+                <ul>
+                    <li>Automatizar sinais baseados em médias móveis para não operar contra a tendência</li>
+                    <li>Gerenciar múltiplas contas</li>
+                    <li>Receber sinais de trading precisos</li>
+
+                <a href="https://drive.google.com/file/d/1re2D4fueUGIX04NH3BElo5sg_MV-Qj42/view?usp=sharing" class="btn-download" download><i class="fas fa-download"></i> Baixar Agora</a>
+                </ul>
+                <p>Baixe agora e experimente o poder do Trader Alpha!</p>
+                <p><a href="javascript:void(0);" class="btn-personalize" onclick="togglePersonalizeBox()">Clique aqui para personalizar seu robô</a></p>
+            </div>
+        </section>
+        <section id="personalize" class="personalize" style="display: none;">
+            <div class="container">
+                <h2>Personalize seu Robô</h2>
+                <form id="personalize-form" onsubmit="enviarParaWhatsApp(event)">
+                    <label for="custom-request">O que você gostaria de adicionar ao robô?</label>
+                    <textarea id="custom-request" name="custom-request" rows="4" placeholder="Digite sua solicitação aqui..."></textarea>
+                    <button type="submit" class="btn-submit">Enviar para WhatsApp</button>
+                </form>
+            </div>
+        </section>
+        <section class="download">
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Trader Alpha. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
